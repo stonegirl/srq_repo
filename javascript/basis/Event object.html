@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>事件对象event</title>
+</head>
+<body>
+<form>
+	<p>事件对象event<br>
+		1）：type：获取事件类型<br>
+		2）：target：获取事件目标<br>
+		3）：stopPropagation():阻止事件冒泡<br>
+		4）：preventDefault()；阻止事件默认行为
+	</p>
+	<div id="div">
+		<button id="btn">按钮</button>
+	</div>
+	<a href="http://www.baidu.com" id="aid">百度</a>
+</form>
+<script>
+	document.getElementById("btn").addEventListener("click",showType);
+	document.getElementById("div").addEventListener("click",showTarget);
+	document.getElementById("aid").addEventListener("click",showAid);
+	function showType(event){
+		alert(event.type);//获取事件类型
+		event.stopPropagation();//阻止事件冒泡(由于事件冒泡程序会由btn执行完成后执行div，之内至外执行)
+	}
+	function showTarget(event){
+		alert(event.target);//获取事件目标
+	}
+	function showAid(event){
+		event.preventDefault();//阻止a事件默认行为链接
+	}
+</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title></title>
+</head>
+<body>
+<form>
+	<p>事件流：事件冒泡－由具体元素之上到不具体；事件捕获－由不具体到具体元素；</p>
+	<button id="btn">按钮</button>
+</form>
+<!--<script>//DOMO2级处理事件
+	var v = document.getElementById("btn");
+	v.addEventListener("click", hello);//添加句柄
+	v.addEventListener("click", world);
+	v.removeEventListener("click",hello);//移除句柄
+
+	function hello(){
+		alert("hello");
+	}
+	function world(){
+		alert("world");
+	}
+</script>-->
+<script>//事件处理兼容浏览器
+	var v1 = document.getElementById("btn");
+	if(v1.addEventListener){
+		v1.addEventListener("click", hello);//DOM2事件处理
+	}else if(v1.attachEvent){
+		v1.attachEvent("onclick", hello);//IE事件处理程序
+	}else{
+		v1.onclick=hello();//IE//DOM0级事件处理
+	}
+	function hello(){
+		alert("hello");
+	}
+</script>
+</body>
+</html>
