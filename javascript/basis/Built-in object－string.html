@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title></title>
+</head>
+<body>
+<!--创建对像-->
+<script>
+//方法一
+	//people = new Object();
+	//people.name = "shi";
+	//people.age = "30";
+	//document.write("name:"+people.name+"<br>age:"+people.age);
+//方法二
+	//people = {name:"shi",age:"10"}
+	//document.write("name:"+people.name+"<br>age:"+people.age);
+//方法三
+	//function people(name,age){
+	//	this.name=name;
+	//	this.age=age;
+	//}
+	//son = new people("shi",20);
+	//document.write("name:"+son.name+"<br>age:"+son.age);
+//string字符串对象
+	var str = "hello world";
+	var str1 = "hello|world|jikexueyuan";
+	//document.write(str.length);//字符串长度
+	//document.write(str.indexOf("world"));//查找字符串，有打印字符串位置，没有返回－1；
+	//document.write(str.match("world"));//匹配字符串，匹配打印出来，不匹配返回null；
+	//document.write(str.replace("world","jikexuyaun"));//替换字符串world为jikexuyaun；
+	//document.write(str.toUpperCase());//转换为大写，toLowerCase()转换为小写；
+	var s =str1.split("|");//将字符串转换为数组；｜也可以是其他分割符
+	document.write(s[1]);
+</script>
+</body>
+</html>
